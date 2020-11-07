@@ -1,5 +1,6 @@
 import React from "react";
+import { TabPage } from "../../shared/tab_page";
 
 export function CardsList() {
-  return <div>CardsList</div>;
+  return <TabPage title="CardsList">CardsList</TabPage>;
 }

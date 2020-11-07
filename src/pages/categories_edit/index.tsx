@@ -1,7 +1,6 @@
 import React from "react";
-import { useParams } from "react-router";
+import { TabPage } from "../../shared/tab_page";
 
 export function CategoriesEdit() {
-  const { id } = useParams<{ id: string }>();
-  return <div>CategoriesEdit #{id}</div>;
+  return <TabPage title="CategoriesEdit">CategoriesEdit</TabPage>;
 }

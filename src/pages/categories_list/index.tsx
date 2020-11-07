@@ -1,5 +1,6 @@
 import React from "react";
+import { TabPage } from "../../shared/tab_page";
 
 export function CategoriesList() {
-  return <div>CategoriesList</div>;
+  return <TabPage title="CategoriesList">CategoriesList</TabPage>;
 }

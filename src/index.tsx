@@ -1,57 +1,39 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { CategoriesEdit } from "./pages/categories_edit";
 import { CategoriesList } from "./pages/categories_list";
-import { CardsEdit } from "./pages/cards_edit";
 import { CardsList } from "./pages/cards_list";
 import { NewPayment } from "./pages/new_payment";
+import "onsenui/css/onsenui.css";
+import "onsenui/css/onsen-css-components.css";
+import { Page, Tab, Tabbar } from "react-onsenui";
+
+const INITIAL_ACTIVE_TAB_INDEX: number = 1;
 
 function App() {
   return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">New payment</Link>
-            </li>
-            <li>
-              <Link to="/categories">Categories List</Link>
-            </li>
-            <li>
-              <Link to="/categories/1">Categories Edit</Link>
-            </li>
-            <li>
-              <Link to="/cards">Cards List</Link>
-            </li>
-            <li>
-              <Link to="/cards/1">Cards Edit</Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/categories/:id">
-            <CategoriesEdit />
-          </Route>
-          <Route path="/categories">
-            <CategoriesList />
-          </Route>
-          <Route path="/cards/:id">
-            <CardsEdit />
-          </Route>
-          <Route path="/cards">
-            <CardsList />
-          </Route>
-          <Route path="/">
-            <NewPayment />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <Page>
+      <Tabbar
+        index={INITIAL_ACTIVE_TAB_INDEX}
+        animation="none"
+        position="bottom"
+        renderTabs={() => [
+          {
+            content: <CardsList key="cards" />,
+            tab: <Tab key="cards" label="Cards" icon="md-card" />,
+          },
+          {
+            content: <NewPayment key="new_payment" />,
+            tab: <Tab key="new_payment" label="New Payment" icon="md-plus" />,
+          },
+          {
+            content: <CategoriesList key="categories" />,
+            tab: (
+              <Tab key="categories" label="Categories" icon="md-view-list" />
+            ),
+          },
+        ]}
+      />
+    </Page>
   );
 }
 

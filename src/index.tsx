@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { CategoriesList } from "./pages/categories_list";
-import { CardsList } from "./pages/cards_list";
-import { NewPayment } from "./pages/new_payment";
+import { CategoriesList } from "src/pages/categories_list";
+import { CardsList } from "src/pages/cards_list";
+import { NewPayment } from "src/pages/new_payment";
 import "onsenui/css/onsenui.css";
 import "onsenui/css/onsen-css-components.css";
 import { Page, Tab, Tabbar } from "react-onsenui";

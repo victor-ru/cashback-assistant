@@ -1,7 +1,7 @@
+import { List, ListItem } from "react-onsenui";
+import { TabPage } from "src/shared/tab_page";
+import { Card } from "src/types";
 import React from "react";
-import { TabPage } from "../../shared/tab_page";
-import { List, ListItem, Button } from "react-onsenui";
-import { Card } from "../../types";
 
 const cards: Card[] = [
   {

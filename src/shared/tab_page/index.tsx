@@ -15,9 +15,7 @@ export function TabPage(props: TabPageProps) {
         </Toolbar>
       )}
     >
-      <p style={{ padding: "0 15px" }}>
-        This is the <strong>{props.title}</strong> page!
-      </p>
+      {props.children}
     </Page>
   );
 }

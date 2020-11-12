@@ -1,0 +1,11 @@
+.leftLabel {
+    width: 30%;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 10px;
+}
+
+.leftLabelLong {
+    width: 90%;
+}

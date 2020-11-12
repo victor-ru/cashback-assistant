@@ -55,6 +55,8 @@
     ]
   },
   "devDependencies": {
-    "@types/react-onsenui": "^2.9.13"
+    "@types/classnames": "^2.2.11",
+    "@types/react-onsenui": "^2.9.13",
+    "classnames": "^2.2.6"
   }
 }

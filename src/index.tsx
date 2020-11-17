@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { CategoriesList } from "src/pages/categories_list";
 import { NewPayment } from "src/pages/new_payment";
 import "onsenui/css/onsenui.css";
 import "onsenui/css/onsen-css-components.css";
@@ -39,7 +38,14 @@ function App() {
             tab: <Tab key="new_payment" label="New Payment" icon="md-plus" />,
           },
           {
-            content: <CategoriesList key="categories" />,
+            content: (
+              <Navigator
+                key="categories"
+                animation="lift"
+                initialRoute={{ component: routes.categoriesList }}
+                renderPage={renderPage}
+              />
+            ),
             tab: (
               <Tab key="categories" label="Categories" icon="md-view-list" />
             ),

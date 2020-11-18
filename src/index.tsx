@@ -5,6 +5,7 @@ import "onsenui/css/onsenui.css";
 import "onsenui/css/onsen-css-components.css";
 import { Navigator, Page, Tab, Tabbar } from "react-onsenui";
 import { routes } from "./routes";
+import { CategoriesList } from "./pages/categories_list";
 
 const INITIAL_ACTIVE_TAB_INDEX: number = 1;
 
@@ -38,14 +39,7 @@ function App() {
             tab: <Tab key="new_payment" label="New Payment" icon="md-plus" />,
           },
           {
-            content: (
-              <Navigator
-                key="categories"
-                animation="lift"
-                initialRoute={{ component: routes.categoriesList }}
-                renderPage={renderPage}
-              />
-            ),
+            content: <CategoriesList />,
             tab: (
               <Tab key="categories" label="Categories" icon="md-view-list" />
             ),

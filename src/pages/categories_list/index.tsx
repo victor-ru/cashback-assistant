@@ -1,8 +1,14 @@
-import { Button, Icon, List, ListItem, Navigator } from "react-onsenui";
+import {
+  AlertDialog,
+  Button,
+  Icon,
+  Input,
+  List,
+  ListItem,
+} from "react-onsenui";
 import { TabPage } from "src/shared/tab_page";
 import { Category } from "src/types";
 import React from "react";
-import { routes } from "src/routes";
 
 const categories: Category[] = [
   {
@@ -15,11 +21,11 @@ const categories: Category[] = [
   },
 ];
 
-interface CategoriesListProps {
-  navigator: Navigator;
-}
+export function CategoriesList() {
+  const [editedCategory, setEditedCategory] = React.useState<Category | null>(
+    null
+  );
 
-export function CategoriesList(props: CategoriesListProps) {
   return (
     <TabPage title="CategoriesList">
       <List
@@ -28,7 +34,7 @@ export function CategoriesList(props: CategoriesListProps) {
           <ListItem>
             <Button
               onClick={() => {
-                props.navigator.pushPage({ component: routes.categoriesEdit });
+                setEditedCategory({ id: 0, name: "" });
               }}
               modifier="large"
             >
@@ -41,10 +47,7 @@ export function CategoriesList(props: CategoriesListProps) {
             key={row.id}
             tappable
             onClick={() => {
-              props.navigator.pushPage(
-                { component: routes.categoriesEdit },
-                { data: { id: row.id } }
-              );
+              setEditedCategory(row);
             }}
           >
             <div className="center">
@@ -56,6 +59,44 @@ export function CategoriesList(props: CategoriesListProps) {
           </ListItem>
         )}
       />
+      <AlertDialog
+        isOpen={editedCategory !== null}
+        onCancel={() => setEditedCategory(null)}
+        modifier="rowfooter"
+      >
+        <div className="alert-dialog-title">Category Name</div>
+        <div className="alert-dialog-content">
+          <Input
+            placeholder="Type here"
+            modifier="underbar"
+            value={editedCategory === null ? "" : editedCategory.name}
+            onChange={(event) => {
+              if (editedCategory !== null) {
+                setEditedCategory({
+                  ...editedCategory,
+                  name: event.target.value,
+                });
+              }
+            }}
+          />
+        </div>
+        <div className="alert-dialog-footer">
+          <Button
+            onClick={() => setEditedCategory(null)}
+            // the --rowfooter modifier is not applied automatically for some reason
+            // added it manually here and in the button below
+            className="alert-dialog-button alert-dialog-button--rowfooter"
+          >
+            Cancel
+          </Button>
+          <Button
+            onClick={() => setEditedCategory(null)}
+            className="alert-dialog-button alert-dialog-button--rowfooter"
+          >
+            Ok
+          </Button>
+        </div>
+      </AlertDialog>
     </TabPage>
   );
 }

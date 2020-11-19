@@ -9,17 +9,8 @@ import { TabPage } from "src/shared/tab_page";
 import { Category } from "src/types";
 import React from "react";
 import { DeleteButton } from "src/shared/delete_button";
+import { categories } from "src/shared/mockup_data";
 
-const categories: Category[] = [
-  {
-    id: 1,
-    name: "Category 1",
-  },
-  {
-    id: 2,
-    name: "Category 2",
-  },
-];
 
 export function CategoriesList() {
   const [editedCategory, setEditedCategory] = React.useState<Category | null>(

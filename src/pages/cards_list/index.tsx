@@ -4,23 +4,7 @@ import { Card } from "src/types";
 import React from "react";
 import { routes } from "src/routes";
 import { DeleteButton } from "src/shared/delete_button";
-
-const cards: Card[] = [
-  {
-    id: 1,
-    name: "Card 1",
-    bank: "Bank 1",
-    basePercent: 0,
-    cashbackCategories: [],
-  },
-  {
-    id: 2,
-    name: "Card 2",
-    bank: "Bank 2",
-    basePercent: 1,
-    cashbackCategories: [],
-  },
-];
+import { cards } from "src/shared/mockup_data";
 
 interface CardsListItemProps {
   navigator: Navigator;

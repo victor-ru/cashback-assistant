@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Category } from "src/types";
+import { Card } from "src/types";
 import { TabPage } from "src/shared/tab_page";
 import {
   Button,
@@ -12,27 +12,8 @@ import {
 import styles from "./styles.module.css";
 import classnames from "classnames";
 import { DeleteButton } from "src/shared/delete_button";
+import { card1 } from "src/shared/mockup_data";
 
-const cashbackCategory1: Category = {
-  id: 1,
-  name: "Category 1",
-};
-
-const cashbackCategory2: Category = {
-  id: 2,
-  name: "Category 2",
-};
-
-const card: Card = {
-  id: 1,
-  name: "Card 1",
-  bank: "Bank 1",
-  basePercent: 1,
-  cashbackCategories: [
-    { category: cashbackCategory1, percent: 5 },
-    { category: cashbackCategory2, percent: 10 },
-  ],
-};
 
 function Label(props: { children: React.ReactNode; long?: boolean }) {
   return (
@@ -60,18 +41,18 @@ export function CardsEdit(props: CardsEditProps) {
         <ListItem>
           <Label>Title</Label>
           <div className="center">
-            <Input value={card.name} float placeholder="Card name" />
+            <Input value={card1.name} float placeholder="Card name" />
           </div>
         </ListItem>
         <ListItem>
           <Label>Bank</Label>
           <div className="center">
-            <Input value={card.bank} float placeholder="Card bank" />
+            <Input value={card1.bank} float placeholder="Card bank" />
           </div>
         </ListItem>
       </List>
       <List
-        dataSource={card.cashbackCategories}
+        dataSource={card1.cashbackCategories}
         renderHeader={() => <ListHeader>Cashback Categories</ListHeader>}
         renderRow={(cashbackCategory) => (
           <ListItem key={cashbackCategory.category.id}>

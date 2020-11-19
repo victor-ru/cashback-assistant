@@ -4,7 +4,6 @@ import { TabPage } from "src/shared/tab_page";
 import {
   Button,
   Input,
-  Icon,
   List,
   ListItem,
   ToolbarButton,
@@ -12,6 +11,7 @@ import {
 } from "react-onsenui";
 import styles from "./styles.module.css";
 import classnames from "classnames";
+import { DeleteButton } from "src/shared/delete_button";
 
 const cashbackCategory1: Category = {
   id: 1,
@@ -84,7 +84,11 @@ export function CardsEdit(props: CardsEditProps) {
               />
             </div>
             <div className="right">
-              <Icon icon="fa-trash-alt"></Icon>
+              <DeleteButton
+                onClick={() => {
+                  console.log("delete confirmed");
+                }}
+              />
             </div>
           </ListItem>
         )}

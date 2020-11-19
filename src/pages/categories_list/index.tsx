@@ -1,7 +1,6 @@
 import {
   AlertDialog,
   Button,
-  Icon,
   Input,
   List,
   ListItem,
@@ -9,6 +8,7 @@ import {
 import { TabPage } from "src/shared/tab_page";
 import { Category } from "src/types";
 import React from "react";
+import { DeleteButton } from "src/shared/delete_button";
 
 const categories: Category[] = [
   {
@@ -54,7 +54,11 @@ export function CategoriesList() {
               <span className="list-item__title">{row.name}</span>
             </div>
             <div className="right">
-              <Icon icon="fa-trash-alt" />
+              <DeleteButton
+                onClick={() => {
+                  console.log("delete confirmed");
+                }}
+              />
             </div>
           </ListItem>
         )}

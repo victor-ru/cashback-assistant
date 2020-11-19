@@ -12,6 +12,7 @@ const INITIAL_ACTIVE_TAB_INDEX: number = 1;
 function renderPage(route: any, navigator?: Navigator) {
   const props = route.props || {};
   props.navigator = navigator;
+  props.key = route.component.name;
 
   return React.createElement(route.component, props);
 }
@@ -39,7 +40,7 @@ function App() {
             tab: <Tab key="new_payment" label="New Payment" icon="md-plus" />,
           },
           {
-            content: <CategoriesList />,
+            content: <CategoriesList key="categories" />,
             tab: (
               <Tab key="categories" label="Categories" icon="md-view-list" />
             ),

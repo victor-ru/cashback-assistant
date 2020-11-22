@@ -45,7 +45,7 @@ interface CardsListProps {
 
 export function CardsList(props: CardsListProps) {
   return (
-    <TabPage title="CardsList">
+    <TabPage title="Cards">
       <List
         dataSource={cards}
         renderFooter={() => (

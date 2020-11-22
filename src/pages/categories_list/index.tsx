@@ -1,16 +1,9 @@
-import {
-  AlertDialog,
-  Button,
-  Input,
-  List,
-  ListItem,
-} from "react-onsenui";
+import { AlertDialog, Button, Input, List, ListItem } from "react-onsenui";
 import { TabPage } from "src/shared/tab_page";
 import { Category } from "src/types";
 import React from "react";
 import { DeleteButton } from "src/shared/delete_button";
 import { categories } from "src/shared/mockup_data";
-
 
 export function CategoriesList() {
   const [editedCategory, setEditedCategory] = React.useState<Category | null>(
@@ -18,7 +11,7 @@ export function CategoriesList() {
   );
 
   return (
-    <TabPage title="CategoriesList">
+    <TabPage title="Categories">
       <List
         dataSource={categories}
         renderFooter={() => (

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { NewPayment } from "src/pages/new_payment";
+import { Summary } from "src/pages/summary";
 import "onsenui/css/onsenui.css";
 import "onsenui/css/onsen-css-components.css";
 import { Navigator, Page, Tab, Tabbar } from "react-onsenui";
@@ -36,8 +36,8 @@ function App() {
             tab: <Tab key="cards" label="Cards" icon="md-card" />,
           },
           {
-            content: <NewPayment key="new_payment" />,
-            tab: <Tab key="new_payment" label="New Payment" icon="md-plus" />,
+            content: <Summary key="summary" />,
+            tab: <Tab key="summary" label="Summary" icon="md-local-atm" />,
           },
           {
             content: <CategoriesList key="categories" />,

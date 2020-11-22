@@ -1,11 +1,15 @@
 .leftLabel {
-    width: 30%;
-    color: #666;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-right: 10px;
+  width: 30%;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
 }
 
 .leftLabelLong {
-    width: 90%;
+  width: 90%;
+}
+
+.addCategoryAlertContent {
+  padding: 10px 40px;
 }

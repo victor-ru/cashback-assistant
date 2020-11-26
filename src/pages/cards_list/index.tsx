@@ -1,14 +1,16 @@
 import { Button, List, ListItem, Navigator } from "react-onsenui";
 import { TabPage } from "src/shared/tab_page";
 import { Card } from "src/types";
-import React from "react";
+import React, { useEffect } from "react";
 import { routes } from "src/routes";
 import { DeleteButton } from "src/shared/delete_button";
-import { cards } from "src/shared/mockup_data";
+import { cards as defaultCards } from "src/shared/default_data";
+import store from "store";
 
 interface CardsListItemProps {
   navigator: Navigator;
   card: Card;
+  onDelete: () => void;
 }
 
 function CardsListItem(props: CardsListItemProps) {
@@ -29,11 +31,7 @@ function CardsListItem(props: CardsListItemProps) {
         <span className="list-item__subtitle">{card.bank}</span>
       </div>
       <div className="right">
-        <DeleteButton
-          onClick={() => {
-            console.log("delete confirmed");
-          }}
-        />
+        <DeleteButton onClick={props.onDelete} />
       </div>
     </ListItem>
   );
@@ -44,6 +42,13 @@ interface CardsListProps {
 }
 
 export function CardsList(props: CardsListProps) {
+  const [cards, setCards] = React.useState<Card[]>([]);
+
+  useEffect(() => {
+    const storedCards: Card[] = store.get("cards", defaultCards);
+    setCards(storedCards);
+  }, []);
+
   return (
     <TabPage title="Cards">
       <List
@@ -65,6 +70,11 @@ export function CardsList(props: CardsListProps) {
             key={card.id}
             navigator={props.navigator}
             card={card}
+            onDelete={() => {
+              const updatedCards = cards.filter((c) => c.id !== card.id);
+              setCards(updatedCards);
+              store.set("cards", updatedCards);
+            }}
           />
         )}
       />

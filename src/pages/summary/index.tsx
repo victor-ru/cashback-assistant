@@ -1,7 +1,7 @@
 import React from "react";
 import { List, ListItem } from "react-onsenui";
 import { TabPage } from "src/shared/tab_page";
-import { cards, categories } from "src/shared/mockup_data";
+import { cards, categories } from "src/shared/default_data";
 import { Category, Card } from "src/types";
 import classnames from "classnames";
 import styles from "./styles.module.css";

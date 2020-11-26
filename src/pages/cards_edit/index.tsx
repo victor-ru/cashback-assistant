@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Card } from "src/types";
+import { Card, Category } from "src/types";
 import { TabPage } from "src/shared/tab_page";
 import {
   Button,
@@ -15,7 +15,11 @@ import {
 import styles from "./styles.module.css";
 import classnames from "classnames";
 import { DeleteButton } from "src/shared/delete_button";
-import { card1, categories } from "src/shared/mockup_data";
+import {
+  card1,
+  categories as defaultCategories,
+} from "src/shared/default_data";
+import store from "store";
 
 interface AddCategoryAlertProps {
   isOpen: boolean;
@@ -26,6 +30,15 @@ interface AddCategoryAlertProps {
 function AddCategoryAlert(props: AddCategoryAlertProps) {
   const [categoryId, setCategoryId] = React.useState<string>("");
   const [percent, setPercent] = React.useState<string>("");
+  const [categories, setCategories] = React.useState<Category[]>([]);
+
+  useEffect(() => {
+    const storedCategories: Category[] = store.get(
+      "categories",
+      defaultCategories
+    );
+    setCategories(storedCategories);
+  }, []);
 
   // reset the state every time props.isOpen changes from false to true
   useEffect(() => {

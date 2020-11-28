@@ -72,11 +72,11 @@ export function CategoriesList() {
             placeholder="Type here"
             modifier="underbar"
             value={editedCategory === null ? "" : editedCategory.name}
-            onChange={(event) => {
+            onChange={(e) => {
               if (editedCategory !== null) {
                 setEditedCategory({
                   ...editedCategory,
-                  name: event.target.value,
+                  name: e.target.value,
                 });
               }
             }}

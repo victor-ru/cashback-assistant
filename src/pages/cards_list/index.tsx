@@ -20,10 +20,10 @@ function CardsListItem(props: CardsListItemProps) {
     <ListItem
       tappable
       onClick={() => {
-        props.navigator.pushPage(
-          { component: routes.cardsEdit },
-          { data: { id: card.id } }
-        );
+        props.navigator.pushPage({
+          component: routes.cardsEdit,
+          props: { card },
+        });
       }}
     >
       <div className="center">

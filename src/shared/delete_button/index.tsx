@@ -3,13 +3,15 @@ import { AlertDialog, Button, Icon } from "react-onsenui";
 import styles from "./styles.module.css";
 
 interface DeleteButtonProps {
+  confirm?: boolean;
   onClick: () => void;
 }
 
 export function DeleteButton(props: DeleteButtonProps) {
-  const [showDeleteConfirmation, setShowDeleteConfirmation] = React.useState<
-    boolean
-  >(false);
+  const [
+    showDeleteConfirmation,
+    setShowDeleteConfirmation,
+  ] = React.useState<boolean>(false);
 
   return (
     <React.Fragment>
@@ -18,7 +20,7 @@ export function DeleteButton(props: DeleteButtonProps) {
         modifier="quiet"
         onClick={(e) => {
           e?.stopPropagation();
-          setShowDeleteConfirmation(true);
+          props.confirm ? setShowDeleteConfirmation(true) : props.onClick();
         }}
       >
         <Icon icon="fa-trash-alt" />

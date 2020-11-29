@@ -55,9 +55,7 @@ export function CategoriesList() {
               setEditedCategory(row);
             }}
           >
-            <div className="center">
-              <span className="list-item__title">{row.name}</span>
-            </div>
+            <div className="center">{row.name}</div>
             <div className="right">
               <DeleteButton
                 onClick={() => {

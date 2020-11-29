@@ -21,7 +21,7 @@ function saveCard(card: Card) {
   // insert a new card if the id equals to 0
   if (card.id === 0) {
     const existingIds: number[] = cards.map((c) => c.id);
-    const newId = Math.max(...existingIds);
+    const newId = existingIds.length > 0 ? Math.max(...existingIds) + 1 : 1;
     const updatedCards = [...cards, { ...card, id: newId }];
     store.set("cards", updatedCards);
     return;

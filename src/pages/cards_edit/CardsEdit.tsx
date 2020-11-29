@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Card, Category } from "src/types";
 import { TabPage } from "src/shared/tab_page";
 import {
@@ -9,33 +9,28 @@ import {
   ToolbarButton,
   Navigator,
 } from "react-onsenui";
-import { cards as defaultCards } from "src/shared/default_data";
-import store from "store";
 import { EditCategories } from "./EditCategories";
 import { AddCategoryAlert } from "./AddCategoryAlert";
 import { Label } from "./Label";
+import { StoreContext } from "src/shared/store";
 
-function saveCard(card: Card) {
-  const cards: Card[] = store.get("cards", defaultCards);
-
+function getUpdatedCards(cards: Card[], newCard: Card) {
   // insert a new card if the id equals to 0
-  if (card.id === 0) {
+  if (newCard.id === 0) {
     const existingIds: number[] = cards.map((c) => c.id);
     const newId = existingIds.length > 0 ? Math.max(...existingIds) + 1 : 1;
-    const updatedCards = [...cards, { ...card, id: newId }];
-    store.set("cards", updatedCards);
-    return;
+    const updatedCards = [...cards, { ...newCard, id: newId }];
+    return updatedCards;
   }
 
   // update the existing card if the id is not 0
   const updatedCards = cards.map((c) => {
-    if (c.id === card.id) {
-      return card;
+    if (c.id === newCard.id) {
+      return newCard;
     }
     return c;
   });
-
-  store.set("cards", updatedCards);
+  return updatedCards;
 }
 
 // defaultCard is used when a new card is added
@@ -72,19 +67,22 @@ export function CardsEdit(props: CardsEditProps) {
     setShowAddCategoryAlert,
   ] = React.useState<boolean>(false);
 
+  const { cards, setCards } = useContext(StoreContext);
+
   return (
     <TabPage
       backButtonText="All Cards"
       rightButton={
         <ToolbarButton
           onClick={() => {
-            saveCard({
+            const card = {
               id,
               name,
               bank,
               basePercent: parseInt(basePercent) || 0,
               cashbackCategories,
-            });
+            };
+            setCards(getUpdatedCards(cards, card));
             navigator.popPage();
           }}
         >

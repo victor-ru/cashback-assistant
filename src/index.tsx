@@ -6,6 +6,7 @@ import "onsenui/css/onsen-css-components.css";
 import { Navigator, Page, Tab, Tabbar } from "react-onsenui";
 import { routes } from "./routes";
 import { CategoriesList } from "./pages/categories_list";
+import { StoreProvider } from "./shared/store";
 
 const INITIAL_ACTIVE_TAB_INDEX: number = 1;
 
@@ -19,35 +20,37 @@ function renderPage(route: any, navigator?: Navigator) {
 
 function App() {
   return (
-    <Page>
-      <Tabbar
-        index={INITIAL_ACTIVE_TAB_INDEX}
-        position="bottom"
-        renderTabs={() => [
-          {
-            content: (
-              <Navigator
-                key="cards"
-                animation="lift"
-                initialRoute={{ component: routes.cardsList }}
-                renderPage={renderPage}
-              />
-            ),
-            tab: <Tab key="cards" label="Cards" icon="md-card" />,
-          },
-          {
-            content: <Summary key="summary" />,
-            tab: <Tab key="summary" label="Summary" icon="md-local-atm" />,
-          },
-          {
-            content: <CategoriesList key="categories" />,
-            tab: (
-              <Tab key="categories" label="Categories" icon="md-view-list" />
-            ),
-          },
-        ]}
-      />
-    </Page>
+    <StoreProvider>
+      <Page>
+        <Tabbar
+          index={INITIAL_ACTIVE_TAB_INDEX}
+          position="bottom"
+          renderTabs={() => [
+            {
+              content: (
+                <Navigator
+                  key="cards"
+                  animation="lift"
+                  initialRoute={{ component: routes.cardsList }}
+                  renderPage={renderPage}
+                />
+              ),
+              tab: <Tab key="cards" label="Cards" icon="md-card" />,
+            },
+            {
+              content: <Summary key="summary" />,
+              tab: <Tab key="summary" label="Summary" icon="md-local-atm" />,
+            },
+            {
+              content: <CategoriesList key="categories" />,
+              tab: (
+                <Tab key="categories" label="Categories" icon="md-view-list" />
+              ),
+            },
+          ]}
+        />
+      </Page>
+    </StoreProvider>
   );
 }
 

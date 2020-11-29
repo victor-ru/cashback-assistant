@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Category } from "src/types";
 import { Button, Input, AlertDialog, Select, Row } from "react-onsenui";
 import styles from "./styles.module.css";
 import classnames from "classnames";
-import { categories as defaultCategories } from "src/shared/default_data";
-import store from "store";
+import { StoreContext } from "src/shared/store";
 
 interface AddCategoryAlertProps {
   isOpen: boolean;
@@ -15,15 +14,8 @@ interface AddCategoryAlertProps {
 export function AddCategoryAlert(props: AddCategoryAlertProps) {
   const [category, setCategory] = React.useState<Category | null>(null);
   const [percent, setPercent] = React.useState<string>("");
-  const [categories, setCategories] = React.useState<Category[]>([]);
 
-  useEffect(() => {
-    const storedCategories: Category[] = store.get(
-      "categories",
-      defaultCategories
-    );
-    setCategories(storedCategories);
-  }, []);
+  const { categories } = useContext(StoreContext);
 
   // reset the state every time props.isOpen changes from false to true
   useEffect(() => {

@@ -1,24 +1,17 @@
 import { AlertDialog, Button, Input, List, ListItem } from "react-onsenui";
 import { TabPage } from "src/shared/tab_page";
 import { Category } from "src/types";
-import React, { useEffect } from "react";
+import React, { useContext } from "react";
 import { DeleteButton } from "src/shared/delete_button";
-import { categories as defaultCategories } from "src/shared/default_data";
 import store from "store";
+import { StoreContext } from "src/shared/store";
 
 export function CategoriesList() {
   const [editedCategory, setEditedCategory] = React.useState<Category | null>(
     null
   );
-  const [categories, setCategories] = React.useState<Category[]>([]);
 
-  useEffect(() => {
-    const storedCategories: Category[] = store.get(
-      "categories",
-      defaultCategories
-    );
-    setCategories(storedCategories);
-  }, []);
+  const { categories, setCategories } = useContext(StoreContext);
 
   return (
     <TabPage title="Categories">
@@ -54,7 +47,6 @@ export function CategoriesList() {
                     (c) => c.id !== row.id
                   );
                   setCategories(updatedCategories);
-                  store.set("categories", updatedCategories);
                 }}
               />
             </div>

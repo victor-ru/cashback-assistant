@@ -1,11 +1,10 @@
 import { Button, List, ListItem, Navigator } from "react-onsenui";
 import { TabPage } from "src/shared/tab_page";
 import { Card } from "src/types";
-import React, { useEffect } from "react";
+import React, { useContext } from "react";
 import { routes } from "src/routes";
 import { DeleteButton } from "src/shared/delete_button";
-import { cards as defaultCards } from "src/shared/default_data";
-import store from "store";
+import { StoreContext } from "src/shared/store";
 
 interface CardsListItemProps {
   navigator: Navigator;
@@ -42,12 +41,7 @@ interface CardsListProps {
 }
 
 export function CardsList(props: CardsListProps) {
-  const [cards, setCards] = React.useState<Card[]>([]);
-
-  useEffect(() => {
-    const storedCards: Card[] = store.get("cards", defaultCards);
-    setCards(storedCards);
-  }, []);
+  const { cards, setCards } = useContext(StoreContext);
 
   return (
     <TabPage title="Cards">
@@ -73,7 +67,6 @@ export function CardsList(props: CardsListProps) {
             onDelete={() => {
               const updatedCards = cards.filter((c) => c.id !== card.id);
               setCards(updatedCards);
-              store.set("cards", updatedCards);
             }}
           />
         )}

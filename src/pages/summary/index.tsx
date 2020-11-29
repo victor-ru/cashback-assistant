@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { List, ListItem } from "react-onsenui";
 import { TabPage } from "src/shared/tab_page";
-import { cards, categories } from "src/shared/default_data";
 import { Category, Card } from "src/types";
 import classnames from "classnames";
 import styles from "./styles.module.css";
+import { StoreContext } from "src/shared/store";
 
 interface SummaryListItemProps {
   category: Category;
@@ -121,6 +121,8 @@ function calculateSummaryData(
 }
 
 export function Summary() {
+  const { cards, categories } = useContext(StoreContext);
+
   const summaryData: {
     category: Category;
     cards: Card[];

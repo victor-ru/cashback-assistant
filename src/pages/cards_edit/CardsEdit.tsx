@@ -79,7 +79,7 @@ export function CardsEdit(props: CardsEditProps) {
               id,
               name,
               bank,
-              basePercent: parseInt(basePercent) || 0,
+              basePercent: parseFloat(basePercent) || 0,
               cashbackCategories,
             };
             setCards(getUpdatedCards(cards, card));

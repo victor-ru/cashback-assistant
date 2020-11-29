@@ -31,7 +31,7 @@ export function EditCategories(props: EditCategoriesProps) {
 
                     return {
                       ...c,
-                      percent: parseInt(e.target.value) || 0,
+                      percent: parseFloat(e.target.value) || 0,
                     };
                   })
                 );

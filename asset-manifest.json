@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/cashback/static/css/main.41627795.chunk.css",
-    "main.js": "/cashback/static/js/main.2d949ca4.chunk.js",
-    "main.js.map": "/cashback/static/js/main.2d949ca4.chunk.js.map",
+    "main.js": "/cashback/static/js/main.6ff95381.chunk.js",
+    "main.js.map": "/cashback/static/js/main.6ff95381.chunk.js.map",
     "runtime-main.js": "/cashback/static/js/runtime-main.8101d5c3.js",
     "runtime-main.js.map": "/cashback/static/js/runtime-main.8101d5c3.js.map",
     "static/css/2.44d725cb.chunk.css": "/cashback/static/css/2.44d725cb.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.44d725cb.chunk.css",
     "static/js/2.74829560.chunk.js",
     "static/css/main.41627795.chunk.css",
-    "static/js/main.2d949ca4.chunk.js"
+    "static/js/main.6ff95381.chunk.js"
   ]
 }

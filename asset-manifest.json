@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/cashback-assistant/static/css/main.41627795.chunk.css",
-    "main.js": "/cashback-assistant/static/js/main.3cd6674d.chunk.js",
-    "main.js.map": "/cashback-assistant/static/js/main.3cd6674d.chunk.js.map",
-    "runtime-main.js": "/cashback-assistant/static/js/runtime-main.f2c24ed3.js",
-    "runtime-main.js.map": "/cashback-assistant/static/js/runtime-main.f2c24ed3.js.map",
-    "static/css/2.31ecea5b.chunk.css": "/cashback-assistant/static/css/2.31ecea5b.chunk.css",
-    "static/js/2.74829560.chunk.js": "/cashback-assistant/static/js/2.74829560.chunk.js",
-    "static/js/2.74829560.chunk.js.map": "/cashback-assistant/static/js/2.74829560.chunk.js.map",
-    "index.html": "/cashback-assistant/index.html",
-    "static/css/2.31ecea5b.chunk.css.map": "/cashback-assistant/static/css/2.31ecea5b.chunk.css.map",
-    "static/css/main.41627795.chunk.css.map": "/cashback-assistant/static/css/main.41627795.chunk.css.map",
-    "static/js/2.74829560.chunk.js.LICENSE.txt": "/cashback-assistant/static/js/2.74829560.chunk.js.LICENSE.txt",
-    "static/media/onsenui.css": "/cashback-assistant/static/media/ionicons.ef35f15c.woff"
+    "main.css": "/cashback/static/css/main.41627795.chunk.css",
+    "main.js": "/cashback/static/js/main.3cd6674d.chunk.js",
+    "main.js.map": "/cashback/static/js/main.3cd6674d.chunk.js.map",
+    "runtime-main.js": "/cashback/static/js/runtime-main.8101d5c3.js",
+    "runtime-main.js.map": "/cashback/static/js/runtime-main.8101d5c3.js.map",
+    "static/css/2.44d725cb.chunk.css": "/cashback/static/css/2.44d725cb.chunk.css",
+    "static/js/2.74829560.chunk.js": "/cashback/static/js/2.74829560.chunk.js",
+    "static/js/2.74829560.chunk.js.map": "/cashback/static/js/2.74829560.chunk.js.map",
+    "index.html": "/cashback/index.html",
+    "static/css/2.44d725cb.chunk.css.map": "/cashback/static/css/2.44d725cb.chunk.css.map",
+    "static/css/main.41627795.chunk.css.map": "/cashback/static/css/main.41627795.chunk.css.map",
+    "static/js/2.74829560.chunk.js.LICENSE.txt": "/cashback/static/js/2.74829560.chunk.js.LICENSE.txt",
+    "static/media/onsenui.css": "/cashback/static/media/ionicons.ef35f15c.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.f2c24ed3.js",
-    "static/css/2.31ecea5b.chunk.css",
+    "static/js/runtime-main.8101d5c3.js",
+    "static/css/2.44d725cb.chunk.css",
     "static/js/2.74829560.chunk.js",
     "static/css/main.41627795.chunk.css",
     "static/js/main.3cd6674d.chunk.js"

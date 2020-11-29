@@ -8,6 +8,8 @@ interface DeleteButtonProps {
 }
 
 export function DeleteButton(props: DeleteButtonProps) {
+  const { confirm = true } = props;
+
   const [
     showDeleteConfirmation,
     setShowDeleteConfirmation,
@@ -20,7 +22,7 @@ export function DeleteButton(props: DeleteButtonProps) {
         modifier="quiet"
         onClick={(e) => {
           e?.stopPropagation();
-          props.confirm ? setShowDeleteConfirmation(true) : props.onClick();
+          confirm ? setShowDeleteConfirmation(true) : props.onClick();
         }}
       >
         <Icon icon="fa-trash-alt" />

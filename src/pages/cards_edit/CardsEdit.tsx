@@ -53,9 +53,12 @@ export function CardsEdit(props: CardsEditProps) {
 
   const [name, setName] = React.useState<string>(card.name);
   const [bank, setBank] = React.useState<string>(card.bank);
+
+  const defaultBasePercent = id === 0 ? "" : String(card.basePercent);
   const [basePercent, setBasePercent] = React.useState<string>(
-    String(card.basePercent)
+    defaultBasePercent
   );
+
   const [cashbackCategories, setCashbackCategories] = React.useState<
     {
       category: Category;

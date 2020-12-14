@@ -20,7 +20,7 @@
     "store": "^2.0.12",
     "typescript": "^4.1.3",
     "web-vitals": "^0.2.4",
-    "workbox-background-sync": "^5.1.3",
+    "workbox-background-sync": "^6.0.2",
     "workbox-broadcast-update": "^5.1.3",
     "workbox-cacheable-response": "^5.1.3",
     "workbox-core": "^5.1.3",

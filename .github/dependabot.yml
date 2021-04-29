@@ -1,0 +1,78 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  reviewers:
+  - victor-ru
+  ignore:
+  - dependency-name: "@types/node"
+    versions:
+    - 14.14.37
+    - 14.14.39
+    - 14.14.41
+    - 15.0.0
+  - dependency-name: workbox-core
+    versions:
+    - 6.1.5
+  - dependency-name: "@testing-library/jest-dom"
+    versions:
+    - 5.11.10
+  - dependency-name: y18n
+    versions:
+    - 4.0.1
+    - 4.0.2
+  - dependency-name: typescript
+    versions:
+    - 4.2.3
+  - dependency-name: "@testing-library/react"
+    versions:
+    - 11.2.5
+  - dependency-name: "@types/jest"
+    versions:
+    - 26.0.22
+  - dependency-name: workbox-expiration
+    versions:
+    - 6.1.0
+    - 6.1.1
+    - 6.1.2
+  - dependency-name: workbox-background-sync
+    versions:
+    - 6.1.0
+    - 6.1.1
+    - 6.1.2
+  - dependency-name: workbox-routing
+    versions:
+    - 6.1.0
+    - 6.1.1
+    - 6.1.2
+  - dependency-name: workbox-range-requests
+    versions:
+    - 6.1.0
+    - 6.1.1
+  - dependency-name: workbox-cacheable-response
+    versions:
+    - 6.1.0
+    - 6.1.1
+  - dependency-name: workbox-streams
+    versions:
+    - 6.1.0
+    - 6.1.1
+  - dependency-name: workbox-broadcast-update
+    versions:
+    - 6.1.0
+    - 6.1.1
+  - dependency-name: workbox-navigation-preload
+    versions:
+    - 6.1.0
+    - 6.1.1
+  - dependency-name: workbox-precaching
+    versions:
+    - 6.1.0
+    - 6.1.1
+  - dependency-name: workbox-google-analytics
+    versions:
+    - 6.1.0
+    - 6.1.1

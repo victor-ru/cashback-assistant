@@ -10015,10 +10015,10 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
-react-onsenui@^1.11.3:
-  version "1.11.3"
-  resolved "https://registry.yarnpkg.com/react-onsenui/-/react-onsenui-1.11.3.tgz#c9677df88a441a0406b671bd9620e25549379d41"
-  integrity sha512-TC+ZM98wg+Ro5wReu8RoxGNvQzBEaYTRa06NWveceLNkjY+EPyfJ7JIxqRK+s/hDUq33m9JO7qJTDIWXe2LISw==
+react-onsenui@^1.11.4:
+  version "1.11.4"
+  resolved "https://registry.yarnpkg.com/react-onsenui/-/react-onsenui-1.11.4.tgz#36703bdd804314fe93eff54871db3f5c164d4df3"
+  integrity sha512-aOa2mSTvyHM4/7Tg+aeCQfFsimG+bYaXLOY35BFv7aoKmbOez6cJTuZ/9d4SLWdnh9gnMg1zFKiPTFy9us3BCA==
   dependencies:
     enzyme "^3.3.0"
     enzyme-adapter-react-16 "^1.1.1"
